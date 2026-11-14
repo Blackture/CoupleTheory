@@ -177,7 +177,7 @@
 
 \begin{definition}[Extended Human Sets]\label{sec:en:definition:extended-human-sets}
     \leavevmode\\
-    Let $\perp\notin\mathbb{H}$ be an nonexistent or unavailable human, and $\triangle\notin\mathbb{H}^2\,\land\,\triangle\notin\mathcal{H}^2$ with $\triangle:=(\perp,\perp)$ an nonexistent couple.
+    Let $\perp\notin\mathbb{H}$ be an nonexistent, unavailable, or incompatible human, and $\triangle\notin\mathbb{H}^2\,\land\,\triangle\notin\mathcal{H}^2$ with $\triangle:=(\perp,\perp)$ an nonexistent couple.
     Let $\hat{\mathbb{H}}^2:=\mathbb{H}^2\cup\{\triangle\}$, $\hat{\mathcal{H}}^2:=\mathcal{H}^2\cup\{\triangle\}$, and $\hat{\mathbb{S}}:=\mathbb{S}\cup\{\perp\}$ with continuing validity of the equivalence.
 
     Therefore let
@@ -439,7 +439,7 @@
     $$\mathbb{S}'=\begin{cases} \mathbb{S}\setminus\{x,y\},\quad &\mathcal{D}(x,y)\in\mathcal{H}^2 \\ \mathbb{S},\quad &\mathcal{D}(x,y)=\triangle. \end{cases}$$
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}\label{sec:en:prop:well-def-dcr}
     \begin{statement}
         The function $\mathcal D$ is well-defined.
     \end{statement}
@@ -660,3 +660,48 @@
     From theorem \ref{sec:en:theorem:conservation-of-singleness-parity} follows that for finite $\mathbb{S}$,
     $\forall(x,y)\in\mathbb{S}\times\hat{\mathbb{S}},\quad |\mathbb{S}'|\equiv|\mathbb{S}| \quad (\mathrm{mod}\;2).$
 \end{corollary}
+
+\begin{corollary}[The Mathematician's Curse]
+    The existence of a well-defined dating function does not imply the existence of a successful date.
+    $$\exists\mathcal D
+        \;\not\Rightarrow\;
+        \exists y\in\mathbb S:
+        \mathcal D(x,y)\in\mathcal H^2$$.
+
+    \begin{proof}
+        We prove the statement by counterexample.
+
+        Let $\mathbb S=\{x\}$ for some $x\in\mathbb H$.
+
+        By Definition \ref{sec:en:definition:extended-human-sets},
+        \[
+            \hat{\mathbb S}=\{x,\perp\}.
+        \]
+
+        Since $\perp\neq x$, we obtain
+        \[
+            \hat{\mathbb S}\setminus\{x\}
+            =\{\perp\}.
+        \]
+
+        By Definition \ref{sec:en:definition:date-couple-relation}
+        \[
+            \mathcal D(x,\perp)=\triangle.
+        \]
+
+        Since $\triangle\notin\mathcal H^2$
+        \[
+            \forall y\in
+            \hat{\mathbb S}\setminus\{x\}:
+            \mathcal D(x,y)\notin\mathcal H^2.
+        \]
+
+        Nevertheless, $\mathcal D$ exists and is
+        well-defined by Proposition \ref{sec:en:prop:well-def-dcr}.
+
+        Therefore, the existence of a well-defined
+        Date-Couple-Relation does not guarantee
+        the existence of a successful date.
+    \end{proof}
+\end{corollary}
+

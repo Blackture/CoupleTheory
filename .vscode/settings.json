@@ -1,0 +1,39 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-shell-escape",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-shell-escape",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "%DOC%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "xelatex"
+}

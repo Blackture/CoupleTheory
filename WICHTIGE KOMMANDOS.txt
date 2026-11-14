@@ -1,0 +1,1 @@
+"C:\Program Files\Inkscape\bin\inkscape.exe" 1.svg --export-type=pdf --export-filename=1.pdf

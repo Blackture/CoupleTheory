@@ -1,0 +1,210 @@
+\documentclass[a4paper, 12pt,
+bibliography=totoc,           % Lit.verz. ins Inh.verz.
+numbers=noenddot,   % Kein Punkt nach letzter Gliederungsziffer
+]{scrartcl}
+
+% Für Texte in deutscher Sprache
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, left=2cm, right=3cm, top=3cm, bottom=3cm]{geometry}
+
+\usepackage{physics}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{eg}{Example}[section]
+\newtheorem{note}{Note}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{statement}{Statement}
+
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage[backend=biber, style=verbose]{biblatex}
+\usepackage{hyperref}
+\addbibresource{kapitel/05_literatur.bib} % Replace with the path to your .bib file
+% Custom command to change punctuation between fields
+\renewcommand*{\newunitpunct}{\addcomma\space}
+
+% Custom bibliography driver for @misc entries
+\DeclareBibliographyDriver{misc}{%
+  \printnames{author}%
+  \setunit{\labelnamepunct}\newblock
+  \printfield{title}%
+  \newunit\newblock
+  \printfield{howpublished}%
+  \newunit\newblock
+  \printfield{note}%
+  \finentry
+}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% Grafiken und Bilder einbinden
+\usepackage{graphicx}
+
+% Pakete für Mathe-Umgebungen, -Symbole und -Schriftstile
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{extpfeil}
+\usepackage{amsthm}
+
+\usepackage{xurl}
+\usepackage{xcolor,cancel}
+\usepackage{xfrac}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{array}
+\usepackage{enumitem}
+
+\newcommand\hcancel[2][black]{\setbox0=\hbox{$#2$}%
+\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+
+\usepackage{svg}
+\usepackage{float}
+
+% Absatzeinzug und -abstand
+\parindent 0pt	% Einzug
+\parskip 6pt	% Abstand
+
+% Links und Verweise innerhalb von PDF Dokumenten
+\usepackage{hyperref}
+
+% Trennungsregeln
+\hyphenation{Sil-ben-trenn-ung}
+
+% Helvetica als Standard-Dokumentschrift
+%\usepackage[scaled]{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+
+% Latin Modern Sans als Standard-Dokumentschrift
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{graphicx}
+\usepackage{subcaption} % Paket für subfigures
+\usepackage{float}
+
+\usepackage{adjustbox} % für die vertikale Zentrierung
+
+\usepackage{pdfpages}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Define C# style
+\lstdefinestyle{csharp}{
+    language=[Sharp]C,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    breaklines=true
+}
+
+% Set the default style for all listings to C# style
+\lstset{style=csharp}
+
+
+% Hier Namen etc. einsetzen
+\newcommand{\studentzwei}{Patrick Mayer}
+\newcommand{\emailzwei}{m.patrick.international@gmail.com}
+\newcommand{\versuchsname}{Couple Theory}
+
+% Define a custom command for non-italics
+\newcommand{\nonitalic}[1]{\,\mathrm{#1}}
+
+% Define specific units
+\newcommand{\kg}{\nonitalic{kg}}
+\newcommand{\m}{\nonitalic{m}}
+\newcommand{\s}{\nonitalic{s}}
+\newcommand{\cm}{\nonitalic{cm}}
+\newcommand{\mm}{\nonitalic{mm}}
+\newcommand{\Pa}{\nonitalic{Pa}}
+\newcommand{\GPa}{\nonitalic{GPa}}
+\newcommand{\N}{\nonitalic{N}}
+\newcommand{\J}{\nonitalic{J}}
+\newcommand{\V}{\nonitalic{V}}
+\newcommand{\A}{\nonitalic{A}}
+\newcommand{\C}{\nonitalic{C}}
+\newcommand{\F}{\nonitalic{F}}
+\newcommand{\g}{\nonitalic{g}}
+\newcommand{\liter}{\nonitalic{l}}
+\newcommand{\e}{\nonitalic{e}}
+\newcommand{\mol}{\nonitalic{mol}}
+\newcommand{\K}{\nonitalic{K}}
+\newcommand{\cd}{\nonitalic{cd}}
+\newcommand{\mN}{\nonitalic{mN}}
+\newcommand{\cel}{\nonitalic{C}}
+%for normal differentials
+\newcommand{\diff}{\nonitalic{d}}
+%for E (+-) numbers
+\newcommand{\E}{\nonitalic{E}}
+
+\DeclareMathOperator{\Eig}{Eig}
+\DeclareMathOperator{\Kern}{Kern}
+
+% Increase ToC depth and section numbering depth
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+% Define new sectioning commands
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+\newcommand{\subsubsubsubsection}[1]{\subparagraph{#1}\mbox{}\\}
+
+\begin{document}
+
+% Titelseite
+\input{kapitel/00_titelseite}
+
+
+
+% Inhaltsverzeichnis
+\tableofcontents
+
+
+% Hier Kapitel einbinden
+\newpage
+\input{kapitel/en/01_introduction}
+\newpage
+\input{kapitel/en/02_theory}
+%\input{kapitel/en/03_tests}
+%\input{kapitel/en/04_conclusion}
+
+
+% Alle (auch nicht im Text zitierte) Werke aus dem Verzeichnis im Literaturverzeichnis anzeigen
+\nocite{*}
+
+% Stil des Literaturverzeichnisses
+%\bibliographystyle{abbrvdin} % Nummern und abgekürzte Namen
+%\bibliographystyle{plaindin} % Nummern und alphabetisch sortiert
+%\bibliographystyle{alphadin} % Buchstaben und sortiert
+%\bibliographystyle{unsrtdin} % Nummern und unsortiert
+
+\newpage
+\printbibliography
+
+\end{document}
+
